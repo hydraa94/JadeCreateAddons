@@ -1,0 +1,12 @@
+{
+  "config.jade.plugin_create.blaze_burner": "Blaze Burner",
+  "config.jade.plugin_create.backtank_capacity": "Backtank Air",
+  "config.jade.plugin_create.placard": "Placard",
+  "config.jade.plugin_create.filter": "Filter",
+  "config.jade.plugin_create.goggles": "Integrate Goggles",
+  "config.jade.plugin_create.goggles.requires_goggles": "Requires Goggles",
+  "config.jade.plugin_create.goggles.detailed": "Detailed-Only",
+  "jade_create_addon.backtank_air": "Air: %s/%s",
+  "jade_create_addon.rpm": "RPM: %s"
+
+}

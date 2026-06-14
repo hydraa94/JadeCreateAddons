@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "jade-create-addon",
+	"version": "${version}",
+	"name": "Jade Create Addon",
+	"description": "Addon for Jade that made to make it compatible with Create mod",
+	"authors": [
+		"Hydraa"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/jade-create-addon/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.hydraa.jadecreateaddon.JadeCreateAddon"
+		],
+        "jade": [
+          "com.hydraa.jadecreateaddon.create.CreatePlugin"
+        ]
+	},
+	"mixins": [
+		"jade-create-addon.mixins.json"
+	],
+    "depends": {
+      "fabricloader": ">=0.19.3",
+      "minecraft": "~26.1.2",
+      "java": ">=25",
+      "fabric-api": "*",
+      "jade": "*",
+      "create": "*"
+    }
+}
