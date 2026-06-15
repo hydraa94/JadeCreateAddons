@@ -2,6 +2,7 @@ package com.hydraa.jadecreateaddon.create;
 
 import com.zurrtum.create.content.equipment.blueprint.BlueprintEntity;
 import com.zurrtum.create.content.fluids.tank.FluidTankBlockEntity;
+import com.zurrtum.create.content.kinetics.base.KineticBlockEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.resources.Identifier;
@@ -43,6 +44,7 @@ public class CreatePlugin implements IWailaPlugin {
         registration.registerBlockDataProvider(BacktankDataProvider.INSTANCE, BacktankBlockEntity.class);
         registration.registerFluidStorage(HideBoilerHandlerProvider.INSTANCE, FluidTankBlockEntity.class);
         registration.registerItemStorage(CraftingBlueprintProvider.INSTANCE, BlueprintEntity.class);
+        registration.registerBlockDataProvider(KineticDataProvider.INSTANCE, KineticBlockEntity.class);
     }
 
     @Override
