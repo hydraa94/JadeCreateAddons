@@ -1,12 +1,6 @@
 package com.hydraa.jadecreateaddon.create;
 
-import java.util.Set;
-
-import com.hydraa.jadecreateaddon.mixin.KineticBlockEntityAccess;
-
-import com.zurrtum.create.Create;
 import com.zurrtum.create.content.equipment.goggles.GogglesItem;
-import com.zurrtum.create.content.kinetics.base.KineticBlockEntity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
@@ -28,16 +22,9 @@ public enum GogglesProvider implements IBlockComponentProvider {
     private static Block block(String id) {
         return BuiltInRegistries.BLOCK
                 .get(Identifier.fromNamespaceAndPath("create", id))
-                .map(net.minecraft.core.Holder::value)
+                .map(h -> h.value())
                 .orElse(net.minecraft.world.level.block.Blocks.AIR);
     }
-
-    private static final Set<String> REMOVE_KEYS = Set.of(
-            "create.tooltip.chute.contains",
-            "create.tooltip.deployer.contains"
-    );
-
-    private static final Block PISTON_EXTENSION_POLE = block("piston_extension_pole");
 
     @Override
     public @NullMarked Identifier getUid() {
@@ -52,7 +39,7 @@ public enum GogglesProvider implements IBlockComponentProvider {
     @Override
     public void appendTooltip(@Nullable ITooltip tooltip1, BlockAccessor accessor, @Nullable IPluginConfig config) {
         if (tooltip1 == null || config == null) return;
-        if(config.get(CreatePlugin.GOGGLES_DETAILED) && !accessor.showDetails()) return;
+        if (config.get(CreatePlugin.GOGGLES_DETAILED) && !accessor.showDetails()) return;
         if (!GogglesItem.isWearingGoggles(accessor.getPlayer())) return;
 
         CompoundTag data = accessor.getServerData();
