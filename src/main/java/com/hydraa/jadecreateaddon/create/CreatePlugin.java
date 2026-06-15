@@ -48,6 +48,7 @@ public class CreatePlugin implements IWailaPlugin {
         registration.registerItemStorage(CraftingBlueprintProvider.INSTANCE, BlueprintEntity.class);
         registration.registerBlockDataProvider(KineticDataProvider.INSTANCE, KineticBlockEntity.class);
         registration.registerItemStorage(ContraptionItemStorageProvider.INSTANCE, AbstractContraptionEntity.class);
+        registration.registerFluidStorage(ContraptionFluidStorageProvider.INSTANCE, AbstractContraptionEntity.class);
     }
 
     @Override
@@ -66,6 +67,7 @@ public class CreatePlugin implements IWailaPlugin {
         registration.registerEntityIcon(CraftingBlueprintProvider.INSTANCE, BlueprintEntity.class);
         registration.registerItemStorageClient(CraftingBlueprintProvider.INSTANCE);
         registration.registerItemStorageClient(ContraptionItemStorageProvider.INSTANCE);
+        registration.registerFluidStorageClient(ContraptionFluidStorageProvider.INSTANCE);
     }
 
 }
