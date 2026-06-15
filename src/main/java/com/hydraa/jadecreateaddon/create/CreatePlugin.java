@@ -1,5 +1,6 @@
 package com.hydraa.jadecreateaddon.create;
 
+import com.zurrtum.create.content.contraptions.AbstractContraptionEntity;
 import com.zurrtum.create.content.equipment.blueprint.BlueprintEntity;
 import com.zurrtum.create.content.fluids.tank.FluidTankBlockEntity;
 import com.zurrtum.create.content.kinetics.base.KineticBlockEntity;
@@ -35,6 +36,7 @@ public class CreatePlugin implements IWailaPlugin {
     public static final Identifier GOGGLES_DETAILED = Identifier.fromNamespaceAndPath(ID, "goggles.detailed");
     public static final Identifier HIDE_BOILER_TANKS = Identifier.fromNamespaceAndPath(ID, "hide_boiler_tanks");
     public static final Identifier CRAFTING_BLUEPRINT = Identifier.fromNamespaceAndPath(ID, "crafting_blueprint");
+    public static final Identifier CONTRAPTION_INVENTORY = Identifier.fromNamespaceAndPath(ID, "contraption_inv");
 
 
 
@@ -45,6 +47,7 @@ public class CreatePlugin implements IWailaPlugin {
         registration.registerFluidStorage(HideBoilerHandlerProvider.INSTANCE, FluidTankBlockEntity.class);
         registration.registerItemStorage(CraftingBlueprintProvider.INSTANCE, BlueprintEntity.class);
         registration.registerBlockDataProvider(KineticDataProvider.INSTANCE, KineticBlockEntity.class);
+        registration.registerItemStorage(ContraptionItemStorageProvider.INSTANCE, AbstractContraptionEntity.class);
     }
 
     @Override
@@ -62,6 +65,7 @@ public class CreatePlugin implements IWailaPlugin {
         registration.registerEntityComponent(CraftingBlueprintProvider.INSTANCE, BlueprintEntity.class);
         registration.registerEntityIcon(CraftingBlueprintProvider.INSTANCE, BlueprintEntity.class);
         registration.registerItemStorageClient(CraftingBlueprintProvider.INSTANCE);
+        registration.registerItemStorageClient(ContraptionItemStorageProvider.INSTANCE);
     }
 
 }
