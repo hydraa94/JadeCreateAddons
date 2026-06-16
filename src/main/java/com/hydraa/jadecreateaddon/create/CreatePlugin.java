@@ -67,6 +67,14 @@ public class CreatePlugin implements IWailaPlugin {
         registration.registerItemStorage(ContraptionItemStorageProvider.INSTANCE, AbstractContraptionEntity.class);
         registration.registerFluidStorage(ContraptionFluidStorageProvider.INSTANCE, AbstractContraptionEntity.class);
 
+        //Hide super glue entity
+        registration.entityTypeOperations().hide(
+                net.minecraft.resources.ResourceKey.create(
+                        net.minecraft.core.registries.Registries.ENTITY_TYPE,
+                        Identifier.fromNamespaceAndPath("create", "super_glue")
+                )
+        );
+
     }
 
     @Override
@@ -90,10 +98,8 @@ public class CreatePlugin implements IWailaPlugin {
         registration.registerEntityComponent(ContraptionExactBlockProvider.INSTANCE, AbstractContraptionEntity.class);
         registration.registerEntityIcon(ContraptionExactBlockProvider.INSTANCE, AbstractContraptionEntity.class);
 
-//        EntityType.byString("create:super_glue").ifPresent(registration::hideTarget);
 
-
-
+        //detect exact block inside moving contraption
         RayTracing.INSTANCE.entityFilter = RayTracing.INSTANCE.entityFilter.and(e -> {
             if (!(e instanceof AbstractContraptionEntity contraptionEntity)) return true;
             Minecraft mc = Minecraft.getInstance();
