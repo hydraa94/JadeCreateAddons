@@ -40,6 +40,9 @@ dependencies {
     //Jade 26.1.0 for Minecraft 26.1.x
     compileOnly "maven.modrinth:jade:${project.jade_version}+fabric"
 
+    //ModMenu
+    compileOnly "maven.modrinth:modmenu:${project.modmenu_version}"
+
 
 }
 
