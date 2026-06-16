@@ -1,9 +1,19 @@
 # Jade Create Addon
 
-## Setup
+A Create-only port of Jade Addons Fabric for newer Minecraft versions.
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+This project focuses on maintaining Create mod integration from Jade Addons on newer Minecraft versions where official support is no longer available.
 
-## License
+Credits
+Based on the original Jade Addons project by Snownee.
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Original repository:
+https://github.com/Snownee/JadeAddonsFabric
+
+All credit for the original design and implementation belongs to the original author.
+
+---
+# Disclaimer
+This is an unofficial port and is not affiliated with or endorsed by the original author.
+
+If you are one of the original authors and have concerns regarding this repository, please open an issue or contact me.
